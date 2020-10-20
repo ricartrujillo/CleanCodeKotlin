@@ -1,9 +1,10 @@
 import ConsolePrinter.printToConsole
 import infraestructura.db.DB
 import infraestructura.db.InMemoryDB
-import user.repository.UserRepository
+import test.user.services.UserServiceImplTest
+import user.contracts.UserRepository
 import user.repository.UserRepositoryImpl
-import user.services.UserService
+import user.contracts.UserService
 import user.services.UserServiceImpl
 
 fun main() {
@@ -14,6 +15,13 @@ fun main() {
     fetchUser(service, 0)
     fetchUser(service, 1)
     fetchUser(service, 2)
+
+    runTests()
+}
+
+fun runTests() {
+    UserServiceImplTest().whenValidatingTheUserAgeWithAnEmptyUserThenReturnsTheErrorMessageNoUserFound()
+    UserServiceImplTest().whenValidatingTheUserAgeWithAnUnderageUserThenReturnsTheErrorMessageNoUserFound()
 }
 
 private fun fetchUser(service: UserService, userId: Int) {

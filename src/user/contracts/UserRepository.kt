@@ -1,4 +1,4 @@
-package user.repository
+package user.contracts
 
 import entidades_negocio.User
 

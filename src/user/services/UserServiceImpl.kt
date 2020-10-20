@@ -1,6 +1,7 @@
 package user.services
 
-import user.repository.UserRepository
+import user.contracts.UserRepository
+import user.contracts.UserService
 
 class UserServiceImpl(private val repository: UserRepository) : UserService {
 

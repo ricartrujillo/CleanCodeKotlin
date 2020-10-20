@@ -2,6 +2,7 @@ package user.repository
 
 import entidades_negocio.User
 import infraestructura.db.DB
+import user.contracts.UserRepository
 
 class UserRepositoryImpl(private val database: DB) : UserRepository {
 
